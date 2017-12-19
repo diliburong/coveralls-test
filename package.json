@@ -1,0 +1,15 @@
+{
+  "name": "coveralls-test",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "mocha",
+    "cov": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "mocha-lcov-reporter": "^1.3.0"
+  },
+  "author": "diliburong <diliburong@126.com>",
+  "license": "MIT"
+}

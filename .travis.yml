@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "8"
+
+cache: yarn
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+install:
+  - yarn install
+
+script:
+  - yarn test
+  - yarn run cov
+
+#指定分支，只有指定的分支提交时才会运行脚本
+branches:
+  only:
+    - master
