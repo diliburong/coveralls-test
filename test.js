@@ -4,7 +4,6 @@ const sum = require('./sum');
 const readFile = require('./await-read-file.js');
 
 describe('#sum.js', () => {
-
     describe('#sum()', () => {
         it('sum() should return 0', () => {
             assert.strictEqual(sum(), 0);
@@ -26,7 +25,6 @@ describe('#sum.js', () => {
 
 describe('#async await-read-file.js', () => {
     describe('#asyncCalculate()', () => {
-
         it('#async function', async () => {
             let r = await readFile();
             assert.strictEqual(r, 15);

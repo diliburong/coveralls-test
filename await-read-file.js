@@ -1,7 +1,5 @@
 console.log('init await-read-file.js...');
-
 const fs = require('mz/fs');
-
 // a simple async function:
 module.exports = async () => {
     let expression = await fs.readFile('./data.txt', 'utf-8');
