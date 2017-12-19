@@ -1,9 +1,9 @@
 const assert = require('assert');
 
-const sum = require('./hello');
-const hello = require('./await-hello');
+const sum = require('./sum');
+const readFile = require('./await-read-file.js');
 
-describe('#hello.js', () => {
+describe('#sum.js', () => {
 
     describe('#sum()', () => {
         it('sum() should return 0', () => {
@@ -24,11 +24,11 @@ describe('#hello.js', () => {
     });
 });
 
-describe('#async hello', () => {
+describe('#async await-read-file.js', () => {
     describe('#asyncCalculate()', () => {
 
         it('#async function', async () => {
-            let r = await hello();
+            let r = await readFile();
             assert.strictEqual(r, 15);
         });
     });

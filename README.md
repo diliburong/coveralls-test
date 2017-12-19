@@ -48,10 +48,33 @@ branches:
 
 * 将代码提交到github就会自动构建
 
+### Coveralls
 
+* 在 *https://coveralls.io/* 中选择需要生成报告的项目，在`Travis` 中build并且没有错误之后会自动的生成覆盖率分析报告
+* 安装`npm install coveralls`
+
+
+## script命令解释
+`"cov": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"`
+
+* 需要注意的是`_mocha`前面的下划线是不能省略的。`mocha`会新建一个进程执行测试，而`_mocha`是在当前进程（即 istanbul 所在的进程）执行测试，只有这样， istanbul 才会捕捉到覆盖率数据。
+
+* 同时`_mocha` 的参数要在`--` 双杠后面 如 `-- -R`,之前的参数都为istanbul的参数
+
+```
+-R, --REPORTER
+这个命令可以用来指定报告格式，默认是“spec”。可以使用第三方的报告样式，例如：
+npm install mocha-lcov-reporter,--reporter mocha-lcov-reporter
+```
+
+
+## Problems?
 ### 代码覆盖率无法显示 
 
 当运行Istanbul 进行代码覆盖率检查时会出现`No coverage information was collected`
 
 #### 问题原因以及解决办法
-在当前 `istanbul latest 0.4.5` 不能 `parse async/await`, 需要 `npm i istanbul@next --save-dev` 即可
+在当前 `istanbul latest 0.4.5` 不能 `parse async/await`, 需要 `npm i istanbul@next --save-dev` 即可 见`awaitReadFile.js`
+
+### 'cat' 不是内部或外部命令，也不是可运行的程序?
+在windows下会有相关问题，运行在服务器linxu系统下就没问题

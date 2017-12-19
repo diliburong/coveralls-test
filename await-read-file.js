@@ -1,4 +1,4 @@
-console.log('init await-hello.js...');
+console.log('init await-read-file.js...');
 
 const fs = require('mz/fs');
 
