@@ -77,5 +77,9 @@ npm install mocha-lcov-reporter,--reporter mocha-lcov-reporter
 #### 问题原因以及解决办法
 在当前 `istanbul latest 0.4.5` 不能 `parse async/await`, 需要 `npm i istanbul@next --save-dev` 即可 见`awaitReadFile.js`
 
+当放到test文件夹后仍然无法显示？？？？？
+可能是路径问题，或者本身istanbul测试版本的问题
+解决方法未知
+
 ### 'cat' 不是内部或外部命令，也不是可运行的程序?
 在windows下会有相关问题，运行在服务器linxu系统下就没问题
