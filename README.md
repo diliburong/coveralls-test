@@ -8,6 +8,7 @@
 * Coveralls是一个自动化测试覆盖率的服务
 * Istanbul是一个代码覆盖率工具并生成测试报告发送到Coveralls
 * mocha是js的测试框架
+* Mocha本身是一个单元测试框架而chai则是一个被称之为期望函数的库。为了能够更直观的说明两者的关系，我们可以把mocha比作一个用于描述单元测试的组件，而chai则可以通过便利的辅助函数设立断言来判断我们的代码执行结果是否有达到预期。
 
 
 ## How?
@@ -77,9 +78,12 @@ npm install mocha-lcov-reporter,--reporter mocha-lcov-reporter
 #### 问题原因以及解决办法
 在当前 `istanbul latest 0.4.5` 不能 `parse async/await`, 需要 `npm i istanbul@next --save-dev` 即可 见`awaitReadFile.js`
 
-当放到test文件夹后仍然无法显示？？？？？
-可能是路径问题，或者本身istanbul测试版本的问题
-解决方法未知
+### 当放到test文件夹后仍然无法显示？？？？？
+
+#### 问题原因以及解决办法
+
+应该是代码组织结构的问题，之前在做覆盖率测试demo时把需要测试的代码源文件一起放入了test，
+按照现在组织结构用index将源文件暴露出来之后再在测试文件中引入，就能够得到代码覆盖率
 
 ### 'cat' 不是内部或外部命令，也不是可运行的程序?
 在windows下会有相关问题，运行在服务器linxu系统下就没问题
