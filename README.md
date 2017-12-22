@@ -50,6 +50,16 @@ branches:
 
 * 将代码提交到github就会自动构建
 
+### Istanbul
+* Statements: 语句覆盖率，执行到每个语句
+
+* Branches: 分支覆盖率，执行到每个if代码块
+
+* Functions: 函数覆盖率，调用到程式中的每一个函数
+
+* Lines: 行覆盖率, 执行到程序中的每一行
+
+
 ### Coveralls
 
 * 在 *https://coveralls.io/* 中选择需要生成报告的项目，在`Travis` 中build并且没有错误之后会自动的生成覆盖率分析报告
